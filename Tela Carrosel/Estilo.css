@@ -27,13 +27,42 @@ header {
 
 
     & img {
-        width: 200px;
+        width: 250px;
     }
 
     & nav {
         & ul {
             display: grid;
-            grid-template-columns: repeat(4, 200px); 
+            grid-template-columns: repeat(4, 200px);
+
+            button {
+                background-color: #221c1c;
+                border: none;
+                padding: 1rem;
+                font-size: 1rem;
+                width: 10em;
+                border-radius: 1rem;
+                color: rgb(255, 255, 255);
+                box-shadow: 0 0.4rem #dfd9d9;
+                cursor: pointer;
+            }
+
+            button:active {
+                color: white;
+                box-shadow: 0 0.2rem #dfd9d9;
+                transform: translateY(0.2rem);
+            }
+
+            button:hover:not(:disabled) {
+                background: rgb(138, 138, 138);
+                color: white;
+                text-shadow: 0 0.1rem #bcb4b4;
+            }
+
+            button:disabled {
+                cursor: auto;
+                color: grey;
+            }
         }
     }
 }
@@ -110,12 +139,13 @@ section {
 
                 & .information {
                     border-radius: 30px;
+                    font-size: 17px;
                     height: 30px;
                     width: 120px;
                     text-transform: uppercase;
-                    border: 2px solid #d3c71f;
-                    background-color: #beff1b;
-                    color: #000;
+                    border: 2px solid #bcb4b4;
+                    background-color: #221c1c;
+                    color: #ffffff;
                     cursor: pointer;
                     font-weight: bold;
                     font-family: "League Gothic", sans-serif;
@@ -211,8 +241,9 @@ section {
 
     & .list {
         --calculation: 1;
+
         & .item {
-            transform: translateX(calc(100vw * var( --calculation)));
+            transform: translateX(calc(100vw * var(--calculation)));
             transition: 0.5s;
             opacity: 0;
 
@@ -259,8 +290,10 @@ section {
 
             & .content {
 
-                & .car-information,h2, .Description, .information
-                 {
+                & .car-information,
+                h2,
+                .Description,
+                .information {
                     transform: translateX(0);
                     opacity: 1;
                 }
